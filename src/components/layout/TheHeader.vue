@@ -38,6 +38,7 @@ import ToggleTheme from '@/UI/ToggleTheme.vue';
   width: 100%;
 
   &__title {
+    margin: 0;
     margin-right: auto;
   }
 
