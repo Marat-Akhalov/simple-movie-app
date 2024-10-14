@@ -11,7 +11,7 @@ export const useMoviesStore = defineStore('movies', () => {
     searchQuery: string = '',
     options?: { count: number; page: number },
   ) => {
-    const defaultOptions = { count: 10, page: 0 }
+    const defaultOptions = { count: 12, page: 0 }
     const finalOptons = { ...defaultOptions, ...options }
     const { count, page } = finalOptons
 
