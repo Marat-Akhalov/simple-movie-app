@@ -1,17 +1,19 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-
-const props = defineProps<{
+interface iProps {
   title: string
   releaseYear: number
   genres: string[]
-  director: string
+  director?: string
   posterUrl?: string
-}>()
+}
 
-const imgLink = computed(() => props.posterUrl ?? '@/assets/img/placeholder-img.jpg')
-const genres = computed(() => props.genres.slice(0, 2).join(' '))
+const { title, releaseYear, genres, director = 'Unknown', posterUrl } = defineProps<iProps>()
+
+
+const imgLink = computed(() => posterUrl ?? '@/assets/img/placeholder-img.jpg')
+const formattedGenres = computed(() => genres.slice(0, 2).join(' '))
 </script>
 
 <template>
@@ -30,7 +32,7 @@ const genres = computed(() => props.genres.slice(0, 2).join(' '))
       <p class="movie__director">{{ director }}</p>
       <div class="movie__info">
         <span class="movie__release-year">{{ releaseYear }}</span>
-        <span class="movie__genres">{{ genres }}</span>
+        <span class="movie__genres">{{ formattedGenres }}</span>
       </div>
     </div>
   </li>

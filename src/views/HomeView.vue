@@ -9,11 +9,24 @@ const { movies } = toRefs(movieStore)
 const { getMovies } = movieStore
 
 getMovies()
+
+const handleSearch = (searchString: string) => {
+  getMovies(searchString)
+  console.log(searchString);
+}
 </script>
 
 <template>
   <main class="main">
-    <SearchMovie />
+    <SearchMovie @search="handleSearch" />
     <MoviesList :movies="movies" />
   </main>
 </template>
+
+<style scoped lang="scss">
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+</style>

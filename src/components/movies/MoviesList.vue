@@ -17,7 +17,7 @@ console.log(prop.movies);
         v-for="movie in movies"
         :key="movie.id"
         :title="movie.title"
-        :director="movie.director"
+        :director="movie.director ?? 'Unknown'"
         :release-year="movie.releaseYear"
         :genres="movie.genres"
         :poster-url="movie.posterUrl"

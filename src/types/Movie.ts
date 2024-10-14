@@ -3,6 +3,6 @@ export interface Movie {
   title: string
   releaseYear: number
   genres: string[]
-  director: string
+  director?: string
   posterUrl?: string
 }
