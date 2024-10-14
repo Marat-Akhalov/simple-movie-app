@@ -16,7 +16,11 @@ console.log(prop.movies);
       <MovieListItem
         v-for="movie in movies"
         :key="movie.id"
-        v-bind="movie"
+        :title="movie.title"
+        :director="movie.director"
+        :release-year="movie.releaseYear"
+        :genres="movie.genres"
+        :poster-url="movie.posterUrl"
       />
     </ul>
   </section>
