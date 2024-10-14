@@ -32,6 +32,8 @@ console.log(prop.movies);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+    margin: 0;
+    padding: 0;
     list-style-type: none;
   }
 }
